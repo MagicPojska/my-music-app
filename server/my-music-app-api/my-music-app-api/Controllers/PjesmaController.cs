@@ -26,7 +26,7 @@ namespace my_music_app_api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Pjesma>>> GetPjesme()
         {
-            return await _context.Pjesme.ToListAsync();
+            return await _context.Pjesme.Include(i => i.Kategorija).ToListAsync();
         }
 
         // GET: api/Pjesma/5
