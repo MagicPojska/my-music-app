@@ -15,6 +15,7 @@ namespace my_music_app_api.Models
         [StringLength(150)]
         public string UrlPjesme { get; set; } = String.Empty;
 
+        [Range(1, 5)]
         public int Ocjena { get; set; }
         public bool IsFavorite { get; set; }
 
