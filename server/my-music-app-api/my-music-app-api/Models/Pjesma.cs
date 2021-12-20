@@ -25,13 +25,14 @@ namespace my_music_app_api.Models
         public DateTime DatumModifikovanja { get; set; }
 
         public int KategorijaId { get; set; }
-        public Kategorija Kategorija { get; set; }
+        public Kategorija? Kategorija { get; set; }
 
 
         public Pjesma()
         {
             IsFavorite = false;
-            DatumUnosa = DateTime.Today;
+            DatumUnosa = DateTime.Now;
+            DatumModifikovanja = DateTime.Now;    
         }
     }
 }
