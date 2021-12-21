@@ -27,6 +27,10 @@ export class SongsApiService {
     return this.http.delete(this.songsAPIUrl + `/pjesma/${id}`);
   }
 
+  getSongsByQuery(query: string): Observable<any[]> {
+    return this.http.get<any>(this.songsAPIUrl + `/pjesma/${query}`);
+  }
+
   //Category
   getCategoryList(): Observable<any[]> {
     return this.http.get<any>(this.songsAPIUrl + '/kategorija');

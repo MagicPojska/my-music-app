@@ -33,7 +33,7 @@ namespace my_music_app_api.Controllers
         [HttpGet("{query}")]
         public ActionResult<List<Pjesma>> GetPjesma(String query)
         {
-            var pjesma = _context.Pjesme.Where(p => p.NazivPjesme.Contains(query)).ToList();
+            var pjesma = _context.Pjesme.Include(i=> i.Kategorija).Where(p => p.NazivPjesme.Contains(query)).ToList();
 
             if (pjesma == null)
             {
