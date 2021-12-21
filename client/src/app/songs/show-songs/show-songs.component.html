@@ -1,1 +1,19 @@
-<p>show-songs works!</p>
+<table class="table table-striped">
+    <thead>
+        <th>ID</th>
+        <th>Naziv Pjesme</th>
+        <th>Naziv Izvodjaca</th>
+        <th>URL</th>
+        <th>Kategorija</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let song of songsList$|async">
+            <td>{{song.id}}</td>
+            <td>{{song.nazivPjesme}}</td>
+            <td>{{song.nazivIzvodjaca}}</td>
+            <td>{{song.urlPjesme}}</td>
+            <td>{{song.kategorija.nazivKategorije}}</td>
+
+        </tr>
+    </tbody>
+</table>
