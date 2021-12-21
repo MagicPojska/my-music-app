@@ -25,6 +25,7 @@ export class ShowSongsComponent implements OnInit {
   modalTitle: string = '';
   activateAddEditComponent: boolean = false;
   song: any;
+  category: any;
 
   modalAdd() {
     this.song = {
@@ -40,9 +41,18 @@ export class ShowSongsComponent implements OnInit {
     this.activateAddEditComponent = true;
   }
 
+  modalAddCategory() {
+    this.category = {
+      id: 0,
+      nazivKategorije: null,
+    };
+    this.activateAddEditComponent = true;
+  }
+
   modalClose() {
     this.activateAddEditComponent = false;
     this.songsList$ = this.service.getSongsList();
+    this.categoryList$ = this.service.getCategoryList();
   }
 
   modalEdit(item: any) {

@@ -9,6 +9,12 @@
     Add Song
 </button>
 
+<!-- Button trigger modal for adding categories -->
+<button type="button" class="btn btn-info float-end m-2" data-bs-toggle="modal" data-bs-target="#staticBackdropCategory"
+    (click)="modalAddCategory()" (click)="modalAdd()">
+    Add Category
+</button>
+
 <table class="table table-striped">
     <thead>
         <th>ID</th>
@@ -47,6 +53,9 @@
 <div class="alert alert-success" role="alert" id="delete-success-alert">
     Song successfuly deleted!
 </div>
+<div class="alert alert-success" role="alert" id="add-category-success-alert">
+    Category successfuly deleted!
+</div>
 
 <!-- Modal for showing categories -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -78,6 +87,24 @@
             </div>
             <div class="modal-body">
                 <app-add-edit-songs [song]="song" *ngIf="activateAddEditComponent"></app-add-edit-songs>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal for adding categories -->
+<div class="modal fade" id="staticBackdropCategory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Add Category</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="modalClose()" id="add-category-modal-close"></button>
+            </div>
+            <div class="modal-body">
+                <app-add-category [category]="category" *ngIf="activateAddEditComponent"></app-add-category>
             </div>
         </div>
     </div>
