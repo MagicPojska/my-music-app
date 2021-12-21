@@ -3,6 +3,8 @@
         <th>ID</th>
         <th>Naziv Pjesme</th>
         <th>Naziv Izvodjaca</th>
+        <th>Ocjena</th>
+        <th>Favorit</th>
         <th>URL</th>
         <th>Kategorija</th>
     </thead>
@@ -11,9 +13,37 @@
             <td>{{song.id}}</td>
             <td>{{song.nazivPjesme}}</td>
             <td>{{song.nazivIzvodjaca}}</td>
-            <td>{{song.urlPjesme}}</td>
+            <td>{{song.ocjena}}</td>
+            <td>{{song.isFavorite ? 'Da' : 'Ne'}}</td>
+            <td> <a href='{{song.urlPjesme}}' target="_blank">{{song.urlPjesme}}</a> </td>
             <td>{{song.kategorija.nazivKategorije}}</td>
 
         </tr>
     </tbody>
 </table>
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Show Song Categories
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Song Categories</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&#x2715;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p *ngFor="let category of categoryList$|async">{{category.id}} - {{category.nazivKategorije}}</p>
+            </div>
+        </div>
+    </div>
+</div>

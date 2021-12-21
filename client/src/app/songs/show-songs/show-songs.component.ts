@@ -18,5 +18,6 @@ export class ShowSongsComponent implements OnInit {
 
   ngOnInit(): void {
     this.songsList$ = this.service.getSongsList();
+    this.categoryList$ = this.service.getCategoryList();
   }
 }
