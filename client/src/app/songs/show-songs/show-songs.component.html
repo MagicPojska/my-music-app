@@ -1,6 +1,12 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-secondary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<!-- Button trigger modal for showing categories-->
+<button type="button" class="btn btn-secondary float-end m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Show Song Categories
+</button>
+
+<!-- Button trigger modal for adding or editing songs -->
+<button type="button" class="btn btn-primary float-end m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+    (click)="modalAdd()">
+    Add Song
 </button>
 
 <table class="table table-striped">
@@ -28,7 +34,7 @@
 </table>
 
 
-<!-- Modal -->
+<!-- Modal for showing categories -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -41,6 +47,22 @@
             </div>
             <div class="modal-body">
                 <p *ngFor="let category of categoryList$|async">{{category.id}} - {{category.nazivKategorije}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for adding or editing songs -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">{{modalTitle}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-add-edit-songs></app-add-edit-songs>
             </div>
         </div>
     </div>

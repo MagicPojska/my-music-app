@@ -1,1 +1,7 @@
-<p>add-edit-songs works!</p>
+<form>
+    <div class="mb-3">
+        <label for="kategorijaId" class="form-label">Category</label>
+        <input type="text" class="form-control" name="kategorijaId" [ngModel]="kategorijaId" *ngIf="song.id!=0"
+            disabled>
+    </div>
+</form>
