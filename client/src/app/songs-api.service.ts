@@ -10,11 +10,12 @@ export class SongsApiService {
 
   constructor(private http: HttpClient) {}
 
+  //Songs
   getSongsList(): Observable<any[]> {
     return this.http.get<any>(this.songsAPIUrl + '/pjesma');
   }
 
-  addSongs(data: any) {
+  addSong(data: any) {
     return this.http.post(this.songsAPIUrl + '/pjesma', data);
   }
 
@@ -24,5 +25,22 @@ export class SongsApiService {
 
   deleteSong(id: number) {
     return this.http.delete(this.songsAPIUrl + `/pjesma/${id}`);
+  }
+
+  //Category
+  getCategoryList(): Observable<any[]> {
+    return this.http.get<any>(this.songsAPIUrl + '/kategorija');
+  }
+
+  addCategory(data: any) {
+    return this.http.post(this.songsAPIUrl + '/kategorija', data);
+  }
+
+  updateCategory(id: number, data: any) {
+    return this.http.put(this.songsAPIUrl + `/kategorija/${id}`, data);
+  }
+
+  deleteCategory(id: number) {
+    return this.http.delete(this.songsAPIUrl + `/kategorija/${id}`);
   }
 }
