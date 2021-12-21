@@ -18,6 +18,7 @@
         <th>Favorit</th>
         <th>URL</th>
         <th>Kategorija</th>
+        <th>Opcije</th>
     </thead>
     <tbody>
         <tr *ngFor="let song of songsList$|async">
@@ -28,7 +29,11 @@
             <td>{{song.isFavorite ? 'Da' : 'Ne'}}</td>
             <td> <a href='{{song.urlPjesme}}' target="_blank">{{song.urlPjesme}}</a> </td>
             <td>{{song.kategorija.nazivKategorije}}</td>
-
+            <td>
+                <button class="btn btn-outline-primary mx-1 mb-1" (click)="modalEdit(song)" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">Edit</button>
+                <button class="btn btn-outline-danger mx-1 mb-1">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>

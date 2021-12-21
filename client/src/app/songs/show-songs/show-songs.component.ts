@@ -44,4 +44,10 @@ export class ShowSongsComponent implements OnInit {
     this.activateAddEditComponent = false;
     this.songsList$ = this.service.getSongsList();
   }
+
+  modalEdit(item: any) {
+    this.song = item;
+    this.modalTitle = 'Edit Song';
+    this.activateAddEditComponent = true;
+  }
 }

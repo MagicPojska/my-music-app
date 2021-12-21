@@ -26,10 +26,7 @@
 
     <div class="mb-3">
         <label for="kategorijaId" class="form-label">Category</label>
-        <!-- <input type="text" class="form-control" name="kategorijaId" [(ngModel)]="kategorijaId" *ngIf="song.id!=0"
-            disabled> -->
-        <select class="form-control" name="kategorijaId" id="kategorijaId" [(ngModel)]="kategorijaId"
-            *ngIf="song.id==0">
+        <select class="form-control" name="kategorijaId" id="kategorijaId" [(ngModel)]="kategorijaId">
             <option *ngFor="let category of categoryList$|async" [value]="category.id">
                 {{category.nazivKategorije}}
             </option>

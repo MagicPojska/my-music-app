@@ -61,5 +61,33 @@ export class AddEditSongsComponent implements OnInit {
     });
   }
 
-  editSong() {}
+  editSong() {
+    var song = {
+      id: this.id,
+      nazivPjesme: this.nazivPjesme,
+      nazivIzvodjaca: this.nazivIzvodjaca,
+      ocjena: this.ocjena,
+      isFavorite: this.isFavorite,
+      urlPjesme: this.urlPjesme,
+      kategorijaId: this.kategorijaId,
+    };
+    var id: number = this.id;
+
+    this.service.updateSong(id, song).subscribe((res) => {
+      var closeModalBtn = document.getElementById('add-edit-modal-close');
+      if (closeModalBtn) {
+        closeModalBtn.click();
+      }
+
+      var showEditSuccess = document.getElementById('update-success-alert');
+      if (showEditSuccess) {
+        showEditSuccess.style.display = 'block';
+      }
+      setTimeout(function () {
+        if (showEditSuccess) {
+          showEditSuccess.style.display = 'none';
+        }
+      }, 3000);
+    });
+  }
 }
