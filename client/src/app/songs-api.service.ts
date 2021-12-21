@@ -16,7 +16,7 @@ export class SongsApiService {
   }
 
   addSong(data: any) {
-    return this.http.post(this.songsAPIUrl + '/pjesma', data);
+    return this.http.post(this.songsAPIUrl + '/pjesma/add', data);
   }
 
   updateSong(id: number, data: any) {

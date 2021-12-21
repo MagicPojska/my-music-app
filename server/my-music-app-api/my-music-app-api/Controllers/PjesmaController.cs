@@ -30,10 +30,10 @@ namespace my_music_app_api.Controllers
         }
 
         // GET: api/Pjesma/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Pjesma>> GetPjesma(int id)
+        [HttpGet("{query}")]
+        public ActionResult<List<Pjesma>> GetPjesma(String query)
         {
-            var pjesma = await _context.Pjesme.FindAsync(id);
+            var pjesma = _context.Pjesme.Where(p => p.NazivPjesme.Contains(query)).ToList();
 
             if (pjesma == null)
             {
@@ -78,12 +78,13 @@ namespace my_music_app_api.Controllers
         // POST: api/Pjesma
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Route("add")]
         public async Task<ActionResult<Pjesma>> PostPjesma(Pjesma pjesma)
         {
             _context.Pjesme.Add(pjesma);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPjesma", new { id = pjesma.Id }, pjesma);
+            return CreatedAtAction(nameof(PostPjesma), new { id = pjesma.Id }, pjesma);
         }
 
         // DELETE: api/Pjesma/5
