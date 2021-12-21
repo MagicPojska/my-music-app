@@ -34,9 +34,14 @@ export class ShowSongsComponent implements OnInit {
       ocjena: 0,
       isFavorite: false,
       urlPjesme: null,
-      idKategorije: 0,
+      kategorijaId: 0,
     };
     this.modalTitle = 'Add Song';
     this.activateAddEditComponent = true;
+  }
+
+  modalClose() {
+    this.activateAddEditComponent = false;
+    this.songsList$ = this.service.getSongsList();
   }
 }

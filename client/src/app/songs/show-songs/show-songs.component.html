@@ -33,6 +33,15 @@
     </tbody>
 </table>
 
+<div class="alert alert-success" role="alert" id="add-success-alert">
+    Song successfuly added!
+</div>
+<div class="alert alert-success" role="alert" id="update-success-alert">
+    Song successfuly updated!
+</div>
+<div class="alert alert-success" role="alert" id="delete-success-alert">
+    Song successfuly deleted!
+</div>
 
 <!-- Modal for showing categories -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -59,10 +68,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">{{modalTitle}}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="modalClose()" id="add-edit-modal-close"></button>
             </div>
             <div class="modal-body">
-                <app-add-edit-songs></app-add-edit-songs>
+                <app-add-edit-songs [song]="song" *ngIf="activateAddEditComponent"></app-add-edit-songs>
             </div>
         </div>
     </div>

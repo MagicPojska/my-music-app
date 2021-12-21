@@ -1,7 +1,41 @@
 <form>
     <div class="mb-3">
-        <label for="kategorijaId" class="form-label">Category</label>
-        <input type="text" class="form-control" name="kategorijaId" [ngModel]="kategorijaId" *ngIf="song.id!=0"
-            disabled>
+        <label for="nazivPjesme" class="form-label">Naziv Pjesme</label>
+        <input type="text" class="form-control" [(ngModel)]="nazivPjesme" name="nazivPjesme">
     </div>
+
+    <div class="mb-3">
+        <label for="nazivIzvodjaca" class="form-label">Naziv Izvodjaca</label>
+        <input type="text" class="form-control" [(ngModel)]="nazivIzvodjaca" name="nazivIzvodjaca">
+    </div>
+
+    <div class="mb-3">
+        <label for="ocjena" class="form-label">Ocjena</label>
+        <input type="number" min="1" max="5" class="form-control" [(ngModel)]="ocjena" name="ocjena">
+    </div>
+
+    <div class="mb-3 form-check">
+        <label for="isFavorite" class="form-check-label">Favorite</label>
+        <input type="checkbox" class="form-check-input" [(ngModel)]="isFavorite" name="isFavorite">
+    </div>
+
+    <div class="mb-3">
+        <label for="urlPjesme" class="form-label">URL</label>
+        <input type="text" class="form-control" [(ngModel)]="urlPjesme" name="urlPjesme">
+    </div>
+
+    <div class="mb-3">
+        <label for="kategorijaId" class="form-label">Category</label>
+        <!-- <input type="text" class="form-control" name="kategorijaId" [(ngModel)]="kategorijaId" *ngIf="song.id!=0"
+            disabled> -->
+        <select class="form-control" name="kategorijaId" id="kategorijaId" [(ngModel)]="kategorijaId"
+            *ngIf="song.id==0">
+            <option *ngFor="let category of categoryList$|async" [value]="category.id">
+                {{category.nazivKategorije}}
+            </option>
+        </select>
+    </div>
+
+    <button (click)="addSong()" class="btn btn-primary" *ngIf="song.id==0">Add</button>
+    <button (click)="editSong()" class="btn btn-primary" *ngIf="song.id!==0">Update</button>
 </form>
