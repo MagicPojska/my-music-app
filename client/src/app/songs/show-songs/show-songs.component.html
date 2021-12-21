@@ -15,7 +15,17 @@
     Add Category
 </button>
 
-<table class="table table-striped">
+<div class="input-group w-25">
+    <div class="form-outline">
+        <input id="searchTerm" [(ngModel)]="query" type="search" id="searchTerm" name="searchTerm"
+            class="form-control" />
+    </div>
+    <button id="search-button" type="button" class="btn btn-primary h-25" (click)="searchSongs()">
+        Search
+    </button>
+</div>
+
+<table class=" table table-striped">
     <thead>
         <th>ID</th>
         <th>Naziv Pjesme</th>
@@ -69,7 +79,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p *ngFor="let category of categoryList$|async">{{category.id}} - {{category.nazivKategorije}}</p>
+                <p *ngFor="let category of categoryList$|async">{{category.id}} - {{category.nazivKategorije}}
+                </p>
             </div>
         </div>
     </div>

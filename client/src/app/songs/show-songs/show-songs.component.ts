@@ -26,6 +26,7 @@ export class ShowSongsComponent implements OnInit {
   activateAddEditComponent: boolean = false;
   song: any;
   category: any;
+  query: any;
 
   modalAdd() {
     this.song = {
@@ -80,5 +81,9 @@ export class ShowSongsComponent implements OnInit {
         }, 3000);
       });
     }
+  }
+
+  searchSongs() {
+    this.songsList$ = this.service.getSongsByQuery(this.query);
   }
 }
