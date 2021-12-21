@@ -50,4 +50,25 @@ export class ShowSongsComponent implements OnInit {
     this.modalTitle = 'Edit Song';
     this.activateAddEditComponent = true;
   }
+
+  deleteSong(song: any) {
+    if (confirm(`Are you sure you want to delete inspection ${song.id}`)) {
+      this.service.deleteSong(song.id).subscribe((res) => {
+        var closeModalBtn = document.getElementById('add-edit-modal-close');
+        if (closeModalBtn) {
+          closeModalBtn.click();
+        }
+
+        var showDeleteSuccess = document.getElementById('delete-success-alert');
+        if (showDeleteSuccess) {
+          showDeleteSuccess.style.display = 'block';
+        }
+        setTimeout(function () {
+          if (showDeleteSuccess) {
+            showDeleteSuccess.style.display = 'none';
+          }
+        }, 3000);
+      });
+    }
+  }
 }
