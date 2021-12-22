@@ -103,6 +103,9 @@ Install NPM
 Welcome page
 ![Landing](./client/src/assets/landing.png)
 
+List categories:
+![ListCategories](./client/src/assets/categories.png)
+
 Add song:
 ![AddSong](./client/src/assets/addsong.png)
 
