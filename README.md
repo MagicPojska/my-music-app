@@ -62,10 +62,6 @@ This is a project built for saving all your music in one place. You can add cate
 * [Bootstrap](https://getbootstrap.com/)
 * [.NET 6](https://nodejs.org/en/)
 
-* [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)
-* [Nodemon](https://www.npmjs.com/package/nodemon)
-* [Dotenv](https://www.npmjs.com/package/dotenv)
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
