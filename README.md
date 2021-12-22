@@ -30,7 +30,7 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation">Preparation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -79,16 +79,16 @@ Install NPM
 ### Preparation
 
 
-3. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/MagicPojska/my-music-app.git
    ```
-5. Install NPM packages in client folder
+2. Install NPM packages in client folder
    ```sh
    npm install
    ```
-7. Open server folder in Visual Studio 2022 and start the server
-7. Start client
+3. Open server folder in Visual Studio 2022 and start the server
+4. Start client
    ```sh
    ng serve --open
    ```
