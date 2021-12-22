@@ -86,4 +86,8 @@ export class ShowSongsComponent implements OnInit {
   searchSongs() {
     this.songsList$ = this.service.getSongsByQuery(this.query);
   }
+
+  resetSongs() {
+    this.songsList$ = this.service.getSongsList();
+  }
 }
