@@ -85,22 +85,6 @@ namespace my_music_app_api.Controllers
             return CreatedAtAction("GetKategorija", new { id = kategorija.Id }, kategorija);
         }
 
-        // DELETE: api/Kategorija/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteKategorija(int id)
-        {
-            var kategorija = await _context.Kategorije.FindAsync(id);
-            if (kategorija == null)
-            {
-                return NotFound();
-            }
-
-            _context.Kategorije.Remove(kategorija);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
         private bool KategorijaExists(int id)
         {
             return _context.Kategorije.Any(e => e.Id == id);

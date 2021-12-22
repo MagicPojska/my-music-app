@@ -39,12 +39,4 @@ export class SongsApiService {
   addCategory(data: any) {
     return this.http.post(this.songsAPIUrl + '/kategorija', data);
   }
-
-  updateCategory(id: number, data: any) {
-    return this.http.put(this.songsAPIUrl + `/kategorija/${id}`, data);
-  }
-
-  deleteCategory(id: number) {
-    return this.http.delete(this.songsAPIUrl + `/kategorija/${id}`);
-  }
 }
