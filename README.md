@@ -61,6 +61,7 @@ This is a project built for saving all your music in one place. You can add cate
 * [Angular](https://angular.io/)
 * [Bootstrap](https://getbootstrap.com/)
 * [.NET 6](https://nodejs.org/en/)
+* [SQL SERVER EXPRESS](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
